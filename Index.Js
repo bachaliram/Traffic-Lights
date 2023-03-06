@@ -1,33 +1,20 @@
-let stopLightElement = document.getElementById("stopLight");
-let readyLightElement = document.getElementById("readyLight");
-let goLightElement = document.getElementById("goLight");
-let stopButtonElement = document.getElementById("stopButton");
-let readyButtonElement = document.getElementById("readyButton");
-let goButtonElement = document.getElementById("goButton");
+let puppyImageElement = document.getElementById("puppyImage");
+let likeIconElement = document.getElementById("likeIcon");
+let likeButtonElement = document.getElementById("likeButton");
+let isImageLiked = false;
 
-function turnOnRed() {
-    stopLightElement.style.backgroundColor = "#cf1124";
-    readyLightElement.style.backgroundColor = "#4b5069";
-    goLightElement.style.backgroundColor = "#4b5069";
-    stopButtonElement.style.backgroundColor = "#cf1124";
-    readyButtonElement.style.backgroundColor = "#1f1d41";
-    goButtonElement.style.backgroundColor = "#1f1d41";
-}
-
-function turnOnYellow() {
-    stopLightElement.style.backgroundColor = "#4b5069";
-    readyLightElement.style.backgroundColor = "#f7c948";
-    goLightElement.style.backgroundColor = "#4b5069";
-    stopButtonElement.style.backgroundColor = "#1f1d41";
-    readyButtonElement.style.backgroundColor = "#f7c948";
-    goButtonElement.style.backgroundColor = "#1f1d41";
-}
-
-function turnOnGreen() {
-    stopLightElement.style.backgroundColor = "#4b5069";
-    readyLightElement.style.backgroundColor = "#4b5069";
-    goLightElement.style.backgroundColor = "#199473";
-    stopButtonElement.style.backgroundColor = "#1f1d41";
-    readyButtonElement.style.backgroundColor = "#1f1d41";
-    goButtonElement.style.backgroundColor = "#199473";
+function onClickLikeButton() {
+    if (isImageLiked === false) {
+        puppyImageElement.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/white-puppy-liked-img.png";
+        likeIconElement.style.color = "#0967d2";
+        likeButtonElement.style.backgroundColor = "#0967d2";
+        likeButtonElement.style.color = "#ffffff";
+        isImageLiked = true;
+    } else {
+        puppyImageElement.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/white-puppy-img.png";
+        likeIconElement.style.color = "#cbd2d9";
+        likeButtonElement.style.backgroundColor = "#cbd2d9";
+        likeButtonElement.style.color = "#9aa5b1";
+        isImageLiked = false;
+    }
 }
